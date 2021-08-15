@@ -5,6 +5,9 @@ adduser "$ADMINUSER"
 usermod -aG sudo "$ADMINUSER"
 dpkg-statoverride --update --add root sudo 4750 /bin/su
 
+echo "Und jetzt das Passwort... "
+passwd "$ADMINUSER"
+
 # Install Virtualmin
 wget "http://software.virtualmin.com/gpl/scripts/install.sh"
 chmod o+x install.sh
